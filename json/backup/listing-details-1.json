@@ -1,0 +1,106 @@
+{ "shooting": 
+    {
+      "id": 1,
+      "title": "Lychie",
+      "description": "Fotos aus der Lychie",
+      "photos": 
+      [
+        {
+          "name": "R0000210.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 1,
+          "comments":
+            [
+              {
+                "author": "paul@asd.de",
+                "text": "erster"
+              },
+              {
+                "author": "maike@domain.com",
+                "text": "zweiter"
+              }
+            ]
+        },
+        {
+          "name": "R0000211.JPG",
+          "thumbs": false,
+          "trash": true,
+          "rating": 0,
+          "comments":
+            [
+              {
+                "author": "fred@locke.io",
+                "text": "nur ein comment"
+              }
+            ]
+        },
+        {
+          "name": "R0000212.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 2,
+          "comments":
+            [
+            ]
+        },
+        {
+          "name": "R0000215.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 3,
+          "comments":
+            [
+            ]
+        },
+        {
+          "name": "R0000216.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 3,
+          "comments":
+            [
+            ]
+        },
+        {
+          "name": "R0000217.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 2,
+          "comments":
+            [
+            ]
+        },
+        {
+          "name": "R0000218.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 2,
+          "comments":
+            [
+            ]
+        },
+        {
+          "name": "R0000219.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 2,
+          "comments":
+            [
+            ]
+        },
+        {
+          "name": "R0000220.JPG",
+          "thumbs": true,
+          "trash": false,
+          "rating": 2,
+          "comments":
+            [
+            ]
+        }
+
+      ]
+    }
+
+  
+}

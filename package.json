@@ -1,0 +1,18 @@
+{
+  "name": "photo-rating-api",
+  "version": "1.0.0",
+  "description": "api for photo-rating frontend app",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.1",
+    "express": "^4.9.8",
+    "multer": "^1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gregor.armann@googlemail.com",
+  "license": "MIT"
+}

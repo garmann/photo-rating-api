@@ -1,0 +1,77 @@
+{ "shooting": 
+    {
+      "id": 2,
+      "title": "Tischtennis",
+      "description": "Tischtennis auf dem Helmi",
+      "photos": 
+        [
+          {
+            "name": "R0000205.JPG",
+            "thumbs": true,
+            "trash": false,
+            "rating": 1,
+            "comments":
+              [
+                {
+                  "author": "paul@asd.de",
+                  "text": "erster"
+                },
+                {
+                  "author": "maike@domain.com",
+                  "text": "zweiter"
+                }
+              ]
+          },
+          {
+            "name": "R0000206.JPG",
+            "thumbs": false,
+            "trash": true,
+            "rating": 0,
+            "comments":
+              [
+                {
+                  "author": "fred@locke.io",
+                  "text": "nur ein comment"
+                }
+              ]
+          },
+          {
+            "name": "R0000208.JPG",
+            "thumbs": true,
+            "trash": false,
+            "rating": 2,
+            "comments":
+              [
+              ]
+          },
+          {
+            "name": "R0000209.JPG",
+            "thumbs": true,
+            "trash": false,
+            "rating": 3,
+            "comments":
+              [
+              ]
+          },
+          {
+            "name": "R0000212.JPG",
+            "thumbs": true,
+            "trash": false,
+            "rating": 3,
+            "comments":
+              [
+              ]
+          },
+          {
+            "name": "R0000213.JPG",
+            "thumbs": true,
+            "trash": false,
+            "rating": 2,
+            "comments":
+              [
+              ]
+          }
+
+        ]
+    }
+}
