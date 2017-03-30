@@ -1,5 +1,6 @@
 var express = require('express'), cors = require('cors');
 var multer = require('multer');
+var zip = require('express-zip');
 var upload = multer({ storage : 'storage' }).array('userPhoto',50);
 var app = express();
 var bodyParser = require('body-parser');
@@ -128,6 +129,42 @@ app.delete('/listing/:listingid', function(request, response){
 
     response.status(201).send(listingid + 'deleted')
 
+});
+
+
+/*
+ part for downloading whole listings as zip file
+*/
+app.get('/download-listing/:id', function(request, response){
+    var id = parseInt(request.params.id);
+    var pathToImages = '../photo-rating/app/res/images/' + id + '/';
+    var dirContent = fs.readdirSync(pathToImages);
+    var downloadFileName = 'shooting-' + id + '.zip';
+
+    var filesForZipper = [];
+    for (var i = 0;i < dirContent.length;i++){
+        if (!dirContent[i].match(/^\./)){
+            filesForZipper.push({
+                path: pathToImages + dirContent[i],
+                name: dirContent[i]
+            });
+        }
+    }
+
+    response.zip(filesForZipper, downloadFileName);
+
+});
+
+/*
+    part for download single images
+*/
+app.get('/download-image/:id/:filename', function(request, response){
+    var id = parseInt(request.params.id);
+    var filename = request.params.filename;
+    var pathToImages = '../photo-rating/app/res/images/' + id + '/';
+    var downloadFileName = pathToImages + filename;
+
+    response.download(downloadFileName, filename);
 });
 
 
