@@ -21,15 +21,19 @@ app.get('/listing-overview', function(request, response){
 
 app.get('/listing/:listingid', function(request, response){
 
-    var listingid = parseInt(request.params.listingid);
-    try {
+    var listingid = parseInt(request.params.listingid, 10);
+
+    if(helperFunctions.checkShootingExists(listingid)){
+
         var dataFromFile = fs.readFileSync('json/listing-details-' + listingid + '.json');
         var jsonFromFile = JSON.parse(dataFromFile);
-    } catch (err) {
-        response.status(404).json('could not read file');
-    }
 
-    response.send(jsonFromFile);
+        response.send(jsonFromFile);
+
+    } else {
+
+        response.status(404).send('could not read file');
+    }
 
 });
 
@@ -150,7 +154,7 @@ app.delete('/listing/:listingid', function(request, response){
  part for downloading whole listings as zip file
 */
 app.get('/download-listing/:id', function(request, response){
-    var id = parseInt(request.params.id);
+    var id = parseInt(request.params.id, 10);
     var pathToImages = '../photo-rating/app/res/images/' + id + '/';
     var dirContent = fs.readdirSync(pathToImages);
     var downloadFileName = 'shooting-' + id + '.zip';
@@ -173,7 +177,7 @@ app.get('/download-listing/:id', function(request, response){
     part for download single images
 */
 app.get('/download-image/:id/:filename', function(request, response){
-    var id = parseInt(request.params.id);
+    var id = parseInt(request.params.id, 10);
     var filename = request.params.filename;
     var pathToImages = '../photo-rating/app/res/images/' + id + '/';
     var downloadFileName = pathToImages + filename;
