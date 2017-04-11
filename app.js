@@ -64,7 +64,7 @@ app.post('/listing', parseUrlencoded, function(request, response){
         response.status(201).send('json created, new id: ' + newShootingId);
 
     } else {
-        response.status(404).send('no valid data');
+        response.status(400).send('not a valid request');
     }
 
 });
@@ -105,7 +105,7 @@ app.put('/listing/:listingid', function(request, response){
 
     } else {
 
-        response.status(418).send('no valid data');
+        response.status(400).send('not a valid request');
     }
 
 });
@@ -142,7 +142,7 @@ app.delete('/listing/:listingid', function(request, response){
         response.status(201).send(listingid + 'deleted')
 
     } else {
-        response.status(404).send('no valid request');
+        response.status(400).send('not a valid request');
     }
 
 

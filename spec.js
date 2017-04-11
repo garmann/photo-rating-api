@@ -38,6 +38,12 @@ describe('supertest: loading express', function () {
       .expect(200, done)
   });
 
+  it('FAIL (GET /listing/11111111) should return 404', function(done){
+    request(server)
+      .get('/listing/11111111')
+      .expect(404, done)
+  });
+
 
   // need to grab id for a later test, see below...
   var getIdFromTestCreateShootingForLater = '';
@@ -87,6 +93,12 @@ describe('supertest: loading express', function () {
         .expect(201, done)
     }
 
+  });
+
+  it('FAIL (DELETE /listing/asd) should return 400', function(done){
+    request(server)
+      .delete('/listing/asd')
+      .expect(400, done)
   });
 
 
