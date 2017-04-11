@@ -1,7 +1,5 @@
 var express = require('express'), cors = require('cors');
-var multer = require('multer');
 var zip = require('express-zip');
-var upload = multer({ storage : 'storage' }).array('userPhoto',50);
 var app = express();
 var bodyParser = require('body-parser');
 var parseUrlencoded = bodyParser.urlencoded({ extended: false });
