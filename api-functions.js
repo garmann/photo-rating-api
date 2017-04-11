@@ -4,12 +4,7 @@ var fs = require('fs');
 
 module.exports = {
     nextFreeId: function(){
-        var dirContent = fs.readdirSync('json/');
-        var usedIds = getUsedIds(dirContent);
-        var nextFreeId = findFreeId(usedIds);
-
-
-        function findFreeId(ids){
+        var findFreeId = function(ids){
             // counter is used for iteration and to check if counter int is in ids
             var counter = 0;
             while(counter < 100){
@@ -24,8 +19,7 @@ module.exports = {
 
         }
 
-
-        function getUsedIds(dir){
+        var getUsedIds = function(dir){
             var ret = [];
 
             for (i in dir){
@@ -38,9 +32,37 @@ module.exports = {
             return ret;
         }
 
-        return nextFreeId;
+        var dirContent = fs.readdirSync('json/');
+        var usedIds = getUsedIds(dirContent);
+        var nextFreeIdNumber = findFreeId(usedIds);
+
+        return nextFreeIdNumber;
+
+    },
+
+    checkShootingExists: function(id){
+        /*
+            return true or false if shooting (id)
+                is existing
+                AND
+                id is a number
+
+            params:
+            shootingid (int)
+        */
+
+        console.log('checkShootingExists:', id);
+
+        if (Number.isInteger(id) &&
+                fs.existsSync('json/listing-details-' + id + '.json')){
+            return true;
+        } else {
+            return false;
+        }
 
     }
+
+
 };
 
 

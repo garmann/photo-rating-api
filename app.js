@@ -26,7 +26,6 @@ app.get('/listing/:listingid', function(request, response){
         var dataFromFile = fs.readFileSync('json/listing-details-' + listingid + '.json');
         var jsonFromFile = JSON.parse(dataFromFile);
     } catch (err) {
-        console.log('ERROR: ', err);
         response.status(404).json('could not read file');
     }
 
@@ -39,6 +38,7 @@ app.get('/listing/:listingid', function(request, response){
 app.post('/listing', parseUrlencoded, function(request, response){
 
     if(request.body.shooting && request.body.shooting.description.length > 5){
+
         var incommingData = request.body;
         var newShootingId = helperFunctions.nextFreeId();
         var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
@@ -70,29 +70,34 @@ app.post('/listing', parseUrlencoded, function(request, response){
 app.put('/listing/:listingid', function(request, response){
 
     if(request.body.shooting && request.body.shooting.description.length > 5){
-        var incommingData = request.body;
-        var listingid = parseInt(request.params.listingid);
 
-        // update listings file
-        var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
-        var listingTitle = incommingData.shooting.title;
+        var listingid = parseInt(request.params.listingid, 10);
 
-        for (i in currentListings.listings){
-            if(currentListings.listings[i].id === listingid){
-                //matches current postion in listings array for shootingid
-                currentListings.listings[i].title = listingTitle;
-                fs.writeFileSync('json/listings.json', JSON.stringify(currentListings));
+        if(helperFunctions.checkShootingExists(listingid)){
 
+            var incommingData = request.body;
+
+            // update listings file
+            var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
+            var listingTitle = incommingData.shooting.title;
+
+            for (i in currentListings.listings){
+                if(currentListings.listings[i].id === listingid){
+                    //matches current postion in listings array for shootingid
+                    currentListings.listings[i].title = listingTitle;
+                    fs.writeFileSync('json/listings.json', JSON.stringify(currentListings));
+
+                }
             }
+
+            // update specific listing file
+            fs.writeFileSync(
+                'json/listing-details-' +
+                listingid +
+                '.json', JSON.stringify(incommingData));
+
+            response.status(201).send('json updated');
         }
-
-        // update specific listing file
-        fs.writeFileSync(
-            'json/listing-details-' +
-            listingid +
-            '.json', JSON.stringify(incommingData));
-
-        response.status(201).send('json updated');
 
     } else {
 
@@ -104,29 +109,39 @@ app.put('/listing/:listingid', function(request, response){
 
 app.delete('/listing/:listingid', function(request, response){
 
-    var listingid = parseInt(request.params.listingid);
+    var listingid = parseInt(request.params.listingid, 10);
 
-    // update listings-overview
-    var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
+    if(helperFunctions.checkShootingExists(listingid)){
 
-    for (i in currentListings.listings){
+        fs.existsSync('json/listing-details-' + listingid + '.json')
 
-        if(currentListings.listings[i].id === listingid){
-            //matches current postion in listings array for shootingid
+        // update listings-overview
+        var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
 
-            currentListings.listings.splice(i, 1);
+        for (i in currentListings.listings){
 
-            //delete currentListings.listings[i] in listings.json
-            fs.writeFileSync('json/listings.json', JSON.stringify(currentListings));
+            if(currentListings.listings[i].id === listingid){
+                //matches current postion in listings array for shootingid
 
+                currentListings.listings.splice(i, 1);
+
+                //delete currentListings.listings[i] in listings.json
+                fs.writeFileSync('json/listings.json', JSON.stringify(currentListings));
+
+            }
         }
+
+
+        // delete json file from disk
+        fs.unlink('json/listing-details-' + listingid + '.json');
+
+        response.status(201).send(listingid + 'deleted')
+
+    } else {
+        response.status(404).send('no valid request');
     }
 
 
-    // delete json file from disk
-    fs.unlink('json/listing-details-' + listingid + '.json');
-
-    response.status(201).send(listingid + 'deleted')
 
 });
 
