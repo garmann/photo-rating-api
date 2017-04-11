@@ -168,11 +168,11 @@ app.get('/download-image/:id/:filename', function(request, response){
 });
 
 
-app.listen(3001, function () {
+var server = app.listen(3001, function () {
   console.log("Running Express");
-});
+})
 
-
+module.exports = server;
 
 // extra functions
 
