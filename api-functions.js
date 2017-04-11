@@ -51,8 +51,6 @@ module.exports = {
             shootingid (int)
         */
 
-        console.log('checkShootingExists:', id);
-
         if (Number.isInteger(id) &&
                 fs.existsSync('json/listing-details-' + id + '.json')){
             return true;
