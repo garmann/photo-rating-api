@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for photo-rating-api/app.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">photo-rating-api/</a> app.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>68/75</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>68/75</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var express = require('express'), cors = require('cors');
+var zip = require('express-zip');
+var app = express();
+var bodyParser = require('body-parser');
+var parseUrlencoded = bodyParser.urlencoded({ extended: false });
+var fs = require('fs');
+var helperFunctions = require('./api-functions.js');
+&nbsp;
+app.use(bodyParser.json());
+app.use(cors());
+&nbsp;
+&nbsp;
+app.get('/listing-overview', function(request, response){
+&nbsp;
+    var dataFromFile = fs.readFileSync('json/listings.json');
+    var jsonFromFile = JSON.parse(dataFromFile);
+    response.send(jsonFromFile);
+&nbsp;
+});
+&nbsp;
+&nbsp;
+app.get('/listing/:listingid', function(request, response){
+&nbsp;
+    var listingid = parseInt(request.params.listingid, 10);
+&nbsp;
+    if(helperFunctions.checkShootingExists(listingid)){
+&nbsp;
+        var dataFromFile = fs.readFileSync('json/listing-details-' + listingid + '.json');
+        var jsonFromFile = JSON.parse(dataFromFile);
+&nbsp;
+        response.send(jsonFromFile);
+&nbsp;
+    } else {
+&nbsp;
+        response.status(404).send('could not read file');
+    }
+&nbsp;
+});
+&nbsp;
+&nbsp;
+// create a new listing
+app.post('/listing', parseUrlencoded, function(request, response){
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(request.body.shooting &amp;&amp; request.body.shooting.description.length &gt; 5){
+&nbsp;
+        var incommingData = request.body;
+        var newShootingId = helperFunctions.nextFreeId();
+        var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
+&nbsp;
+        currentListings.listings.push(
+            {
+                id: newShootingId,
+                title: incommingData.shooting.title
+            }
+        );
+&nbsp;
+        fs.writeFileSync('json/listings.json', JSON.stringify(currentListings));
+&nbsp;
+        fs.writeFileSync(
+            'json/listing-details-' +
+            newShootingId +
+            '.json', JSON.stringify(incommingData));
+&nbsp;
+        response.status(201).send('json created, new id: ' + newShootingId);
+&nbsp;
+    } else {
+<span class="cstat-no" title="statement not covered" >        response.status(400).send('not a valid request');</span>
+    }
+&nbsp;
+});
+&nbsp;
+&nbsp;
+// update existing listing
+app.put('/listing/:listingid', function(request, response){
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(request.body.shooting &amp;&amp; request.body.shooting.description.length &gt; 5){
+&nbsp;
+        var listingid = parseInt(request.params.listingid, 10);
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(helperFunctions.checkShootingExists(listingid)){
+&nbsp;
+            var incommingData = request.body;
+&nbsp;
+            // update listings file
+            var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
+            var listingTitle = incommingData.shooting.title;
+&nbsp;
+            for (i in currentListings.listings){
+                if(currentListings.listings[i].id === listingid){
+                    //matches current postion in listings array for shootingid
+                    currentListings.listings[i].title = listingTitle;
+                    fs.writeFileSync('json/listings.json', JSON.stringify(currentListings));
+&nbsp;
+                }
+            }
+&nbsp;
+            // update specific listing file
+            fs.writeFileSync(
+                'json/listing-details-' +
+                listingid +
+                '.json', JSON.stringify(incommingData));
+&nbsp;
+            response.status(201).send('json updated');
+        }
+&nbsp;
+    } else {
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        response.status(400).send('not a valid request');</span>
+    }
+&nbsp;
+});
+&nbsp;
+&nbsp;
+app.delete('/listing/:listingid', function(request, response){
+&nbsp;
+    var listingid = parseInt(request.params.listingid, 10);
+&nbsp;
+    if(helperFunctions.checkShootingExists(listingid)){
+&nbsp;
+        fs.existsSync('json/listing-details-' + listingid + '.json')
+&nbsp;
+        // update listings-overview
+        var currentListings = JSON.parse(fs.readFileSync('json/listings.json'));
+&nbsp;
+        for (i in currentListings.listings){
+&nbsp;
+            if(currentListings.listings[i].id === listingid){
+                //matches current postion in listings array for shootingid
+&nbsp;
+                currentListings.listings.splice(i, 1);
+&nbsp;
+                //delete currentListings.listings[i] in listings.json
+                fs.writeFileSync('json/listings.json', JSON.stringify(currentListings));
+&nbsp;
+            }
+        }
+&nbsp;
+&nbsp;
+        // delete json file from disk
+        fs.unlink('json/listing-details-' + listingid + '.json');
+&nbsp;
+        response.status(201).send(listingid + 'deleted')
+&nbsp;
+    } else {
+        response.status(400).send('not a valid request');
+    }
+&nbsp;
+&nbsp;
+&nbsp;
+});
+&nbsp;
+&nbsp;
+/*
+ part for downloading whole listings as zip file
+*/
+app.get('/download-listing/:id', function(request, response){
+    var id = parseInt(request.params.id, 10);
+    var pathToImages = '../photo-rating/app/res/images/' + id + '/';
+    var dirContent = fs.readdirSync(pathToImages);
+    var downloadFileName = 'shooting-' + id + '.zip';
+&nbsp;
+    var filesForZipper = [];
+    for (var i = 0;i &lt; dirContent.length;i++){
+        if (!dirContent[i].match(/^\./)){
+            filesForZipper.push({
+                path: pathToImages + dirContent[i],
+                name: dirContent[i]
+            });
+        }
+    }
+&nbsp;
+    response.zip(filesForZipper, downloadFileName);
+&nbsp;
+});
+&nbsp;
+/*
+    part for download single images
+*/
+app.get('/download-image/:id/:filename', <span class="fstat-no" title="function not covered" >function(request, response){</span>
+<span class="cstat-no" title="statement not covered" >    var id = parseInt(request.params.id, 10);</span>
+<span class="cstat-no" title="statement not covered" >    var filename = request.params.filename;</span>
+<span class="cstat-no" title="statement not covered" >    var pathToImages = '../photo-rating/app/res/images/' + id + '/';</span>
+<span class="cstat-no" title="statement not covered" >    var downloadFileName = pathToImages + filename;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    response.download(downloadFileName, filename);</span>
+});
+&nbsp;
+&nbsp;
+var server = app.listen(3001, function () {
+  console.log("Running Express");
+})
+&nbsp;
+module.exports = server;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Apr 12 2017 17:28:46 GMT+0200 (CEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
