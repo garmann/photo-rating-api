@@ -10,11 +10,13 @@
     "express-zip": "^2.0.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "test": "istanbul cover _mocha spec.js"
+    "test:http": "istanbul cover ./node_modules/mocha/bin/_mocha test/test-api-http.js",
+    "test:unit": "./node_modules/mocha/bin/_mocha test/unit-api-functions.js"
   },
   "author": "gregor.armann@googlemail.com",
   "license": "MIT"

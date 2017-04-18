@@ -5,7 +5,7 @@ describe('supertest: loading express', function () {
   var server;
 
   beforeEach(function () {
-    server = require('./app');
+    server = require('../app');
   });
 
   afterEach(function () {
@@ -38,7 +38,7 @@ describe('supertest: loading express', function () {
       .expect(200, done)
   });
 
-  it('FAIL (GET /listing/11111111) should return 404', function(done){
+  it('FAIL (GET /listing/11111111) should return 404', function testGetNonExistingShooting(done){
     request(server)
       .get('/listing/11111111')
       .expect(404, done)
